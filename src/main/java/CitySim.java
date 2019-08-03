@@ -3,8 +3,8 @@ import javax.swing.*;
 public class CitySim {
 
     private static final String cityName = "New Temperance";
-    private static final int cityHeight = 1000;
-    private static final int cityWidth = 1000;
+    private static final int cityHeight = 20;
+    private static final int cityWidth = 20;
     private static City city;
 
     public static void main(String... args) {

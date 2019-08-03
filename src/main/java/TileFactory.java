@@ -1,18 +1,17 @@
 import java.util.HashMap;
 
-public class RandomTileFactory {
+public class TileFactory {
 
     private static HashMap<TileType, Tile> tiles = new HashMap<>();
 
-    public static Tile create() {
-        Tile tile;
-        TileType tileType = TileType.random();
+    public static Tile create(TileType tileType) {
         if (tiles.containsKey(tileType))
             return tiles.get(tileType);
         else {
-            tile = new Tile(tileType);
+            Tile tile = new Tile(tileType);
             tiles.put(tileType, tile);
             return tile;
         }
     }
+
 }

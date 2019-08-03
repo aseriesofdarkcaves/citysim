@@ -1,17 +1,17 @@
 import java.util.Random;
 
 public enum TileType {
+    BUSINESS,
+    GRASS,
+    MUNICIPAL,
+    PARK,
+    RESIDENTIAL,
+    RIVER,
+    RIVERBANK,
     ROAD,
     SIDEWALK,
-    RIVERBANK,
-    RIVER,
-    TRAMLINE,
     TRAINLINE,
-    GRASS,
-    PARK,
-    BUSINESS,
-    RESIDENTIAL,
-    MUNICIPAL;
+    TRAMLINE;
 
     // TODO: extract constant and random method to some form of superclass
     private static final Random RANDOM = new Random();
