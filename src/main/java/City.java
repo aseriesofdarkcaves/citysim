@@ -28,14 +28,15 @@ public class City {
         this.height = height;
         this.type = type;
         tiles = new Tile[this.width][this.height];
-        tiles = CityGenerator.create(type, this.width, this.height);
+        //tiles = CityGenerator.create(type, this.width, this.height);
+        generateRandomCity();
     }
 
     private void generateRandomCity() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 Tile currentTile = TileFactory.create(TileType.random());
-                if (currentTile.getType() == TileType.BUSINESS) {
+                if (currentTile.getTileType() == TileType.BUSINESS) {
                     businesses.add(new Business());
                 }
                 tiles[x][y] = currentTile;

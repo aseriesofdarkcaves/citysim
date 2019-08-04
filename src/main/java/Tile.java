@@ -6,12 +6,12 @@ public class Tile {
         this.type = type;
     }
 
-    public TileType getType() {
+    public TileType getTileType() {
         return type;
     }
 
     @Override
     public String toString() {
-        return this.getType().toString();
+        return this.getTileType().toString();
     }
 }

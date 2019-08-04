@@ -1,21 +1,23 @@
-public class Business {
+public class Business extends Tile {
 
-    private BusinessType type;
+    private BusinessType businessType;
     private String name;
     private Integer ownerId;
+    private static final TileType tileType = TileType.BUSINESS;
 
     public Business() {
-        this.type = BusinessType.random();
-        this.name = "dummy"; // TODO: implement naming method
+        super(tileType);
+        this.businessType = BusinessType.random();
         this.ownerId = null;
+        this.name = "dummy"; // TODO implement naming method
     }
 
-    public BusinessType getType() {
-        return type;
+    public BusinessType getBusinessType() {
+        return businessType;
     }
 
-    public void setType(BusinessType type) {
-        this.type = type;
+    public void setBusinessType(BusinessType businessType) {
+        this.businessType = businessType;
     }
 
     public String getName() {
@@ -36,5 +38,10 @@ public class Business {
 
     public Business generateRandomBusiness() {
         return new Business();
+    }
+
+    @Override
+    public String toString() {
+        return this.getBusinessType().toString();
     }
 }
