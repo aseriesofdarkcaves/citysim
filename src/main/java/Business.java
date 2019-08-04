@@ -1,37 +1,37 @@
 public class Business {
 
-    private BusinessType businessType;
-    private String businessName;
-    private Integer businessOwnerId;
+    private BusinessType type;
+    private String name;
+    private Integer ownerId;
 
     public Business() {
-        this.businessType = BusinessType.random();
-        this.businessName = "dummy"; // TODO: implement naming method
-        this.businessOwnerId = null;
+        this.type = BusinessType.random();
+        this.name = "dummy"; // TODO: implement naming method
+        this.ownerId = null;
     }
 
-    public BusinessType getBusinessType() {
-        return businessType;
+    public BusinessType getType() {
+        return type;
     }
 
-    public void setBusinessType(BusinessType businessType) {
-        this.businessType = businessType;
+    public void setType(BusinessType type) {
+        this.type = type;
     }
 
-    public String getBusinessName() {
-        return businessName;
+    public String getName() {
+        return name;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getBusinessOwnerId() {
-        return businessOwnerId;
+    public Integer getOwnerId() {
+        return ownerId;
     }
 
-    public void setBusinessOwnerId(Integer businessOwnerId) {
-        this.businessOwnerId = businessOwnerId;
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
     }
 
     public Business generateRandomBusiness() {

@@ -2,14 +2,14 @@ import java.util.HashMap;
 
 public class TileFactory {
 
-    private static HashMap<TileType, Tile> tiles = new HashMap<>();
+    private static HashMap<TileType, Tile> instancedTiles = new HashMap<>();
 
-    public static Tile create(TileType tileType) {
-        if (tiles.containsKey(tileType))
-            return tiles.get(tileType);
+    public static Tile create(TileType type) {
+        if (instancedTiles.containsKey(type))
+            return instancedTiles.get(type);
         else {
-            Tile tile = new Tile(tileType);
-            tiles.put(tileType, tile);
+            Tile tile = new Tile(type);
+            instancedTiles.put(type, tile);
             return tile;
         }
     }

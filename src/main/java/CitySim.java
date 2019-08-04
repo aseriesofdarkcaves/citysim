@@ -37,10 +37,10 @@ public class CitySim {
         frame.setVisible(true);
 
 
-//        for (int tileY = 0; tileY < city.getCityHeight(); tileY++) {
-//            for (int tileX = 0; tileX < city.getCityWidth(); tileX++) {
+//        for (int tileY = 0; tileY < city.getHeight(); tileY++) {
+//            for (int tileX = 0; tileX < city.getWidth(); tileX++) {
 //                Tile currentTile = city.getTile(tileX, tileY);
-//                if (tileX % city.getCityWidth() == (city.getCityWidth() - 1)) {
+//                if (tileX % city.getWidth() == (city.getWidth() - 1)) {
 //                    System.out.printf("%-20s%n%n%n", currentTile.getType());
 //                } else {
 //                    System.out.printf("%-20s", currentTile.getType());

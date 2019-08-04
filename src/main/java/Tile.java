@@ -1,6 +1,5 @@
 public class Tile {
 
-    // I'm clinging onto this type of setup rather than inheritance...
     private final TileType type;
 
     public Tile(TileType type) {
