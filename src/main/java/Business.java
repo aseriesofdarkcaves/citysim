@@ -1,38 +1,38 @@
-public class Business extends Tile {
+class Business extends Tile {
 
     private BusinessType businessType;
     private String name;
     private Integer ownerId;
     private static final TileType tileType = TileType.BUSINESS;
 
-    public Business() {
+    Business() {
         super(tileType);
         this.businessType = BusinessType.random();
         this.ownerId = null;
         this.name = "dummy"; // TODO implement naming method
     }
 
-    public BusinessType getBusinessType() {
+    BusinessType getBusinessType() {
         return businessType;
     }
 
-    public void setBusinessType(BusinessType businessType) {
+    void setBusinessType(BusinessType businessType) {
         this.businessType = businessType;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public Integer getOwnerId() {
+    Integer getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(Integer ownerId) {
+    void setOwnerId(Integer ownerId) {
         this.ownerId = ownerId;
     }
 

@@ -1,10 +1,10 @@
 import java.util.HashMap;
 
-public class TileFactory {
+class TileFactory {
 
     private static HashMap<TileType, Tile> instancedTiles = new HashMap<>();
 
-    public static Tile create(TileType type) {
+    static Tile create(TileType type) {
         if (instancedTiles.containsKey(type))
             return instancedTiles.get(type);
         else {

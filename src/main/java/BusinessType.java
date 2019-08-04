@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public enum BusinessType {
+enum BusinessType {
     ACCOUNTANCY,
     ANTIQUES_DEALER,
     AUCTION_ROOMS,
@@ -37,7 +37,7 @@ public enum BusinessType {
     // TODO: extract constant and random method to some form of superclass
     private static final Random RANDOM = new Random();
 
-    public static BusinessType random() {
+    static BusinessType random() {
         return values()[RANDOM.nextInt(values().length)];
     }
 }

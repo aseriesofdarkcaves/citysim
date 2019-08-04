@@ -1,12 +1,12 @@
-public class Tile {
+class Tile {
 
     private final TileType type;
 
-    public Tile(TileType type) {
+    Tile(TileType type) {
         this.type = type;
     }
 
-    public TileType getTileType() {
+    TileType getTileType() {
         return type;
     }
 

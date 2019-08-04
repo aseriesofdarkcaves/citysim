@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class City {
+class City {
 
     private String name;
     private int width;
@@ -14,15 +14,15 @@ public class City {
     private static final int DEFAULT_HEIGHT = 3;
     private static final CityType DEFAULT_TYPE = CityType.GUI_CITY;
 
-    public City(String name) {
+    City(String name) {
         this(name, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
-    public City(String name, int width, int height) {
+    City(String name, int width, int height) {
         this(name, width, height, DEFAULT_TYPE);
     }
 
-    public City(String name, int width, int height, CityType type) {
+    City(String name, int width, int height, CityType type) {
         this.name = name;
         this.width = width;
         this.height = height;
@@ -74,27 +74,27 @@ public class City {
         }
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public int getWidth() {
+    int getWidth() {
         return width;
     }
 
-    public int getHeight() {
+    int getHeight() {
         return height;
     }
 
-    public Tile getTile(int x, int y) {
+    Tile getTile(int x, int y) {
         return tiles[x][y];
     }
 
-    public Tile[][] getTiles() {
+    Tile[][] getTiles() {
         return tiles;
     }
 }

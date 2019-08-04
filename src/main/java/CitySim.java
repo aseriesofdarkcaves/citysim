@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class CitySim {
+class CitySim {
 
     private static City city;
     private static final String cityName = "New Temperance";
@@ -39,9 +39,9 @@ public class CitySim {
 //            for (int tileX = 0; tileX < city.getWidth(); tileX++) {
 //                Tile currentTile = city.getTile(tileX, tileY);
 //                if (tileX % city.getWidth() == (city.getWidth() - 1)) {
-//                    System.out.printf("%-20s%n%n%n", currentTile.getBusinessType());
+//                    System.out.printf("%-20s%n%n%n", currentTile.getType());
 //                } else {
-//                    System.out.printf("%-20s", currentTile.getBusinessType());
+//                    System.out.printf("%-20s", currentTile.getType());
 //                }
 //            }
 //        }
