@@ -36,10 +36,6 @@ public class Business extends Tile {
         this.ownerId = ownerId;
     }
 
-    public Business generateRandomBusiness() {
-        return new Business();
-    }
-
     @Override
     public String toString() {
         return this.getBusinessType().toString();
