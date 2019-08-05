@@ -4,6 +4,8 @@ class TileFactory {
 
     private static HashMap<TileType, Tile> instancedTiles = new HashMap<>();
 
+    private TileFactory() {}
+
     static Tile create(TileType type) {
         if (instancedTiles.containsKey(type))
             return instancedTiles.get(type);

@@ -10,13 +10,7 @@ class City {
     private Tile[][] tiles;
     private List<Business> businesses = new ArrayList<>();
     private final CityType type;
-    private static final int DEFAULT_WIDTH = 3;
-    private static final int DEFAULT_HEIGHT = 3;
-    private static final CityType DEFAULT_TYPE = CityType.GUI_CITY;
-
-    City(String name) {
-        this(name, DEFAULT_WIDTH, DEFAULT_HEIGHT);
-    }
+    private static final CityType DEFAULT_TYPE = CityType.RANDOM_CITY;
 
     City(String name, int width, int height) {
         this(name, width, height, DEFAULT_TYPE);
@@ -28,7 +22,6 @@ class City {
         this.height = height;
         this.type = type;
         tiles = new Tile[this.width][this.height];
-        //tiles = CityGenerator.create(type, this.width, this.height);
         generateRandomCity();
     }
 
