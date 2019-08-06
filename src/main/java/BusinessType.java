@@ -34,7 +34,7 @@ enum BusinessType {
     STATIONERS,
     TATTOO_PARLOR;
 
-    // TODO: extract constant and random method to some form of superclass
+    // TODO extract constant and random method to some form of superclass
     private static final Random RANDOM = new Random();
 
     static BusinessType random() {

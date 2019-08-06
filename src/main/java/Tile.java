@@ -1,5 +1,4 @@
 class Tile {
-
     private final TileType type;
 
     Tile(TileType type) {

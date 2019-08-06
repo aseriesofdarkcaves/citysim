@@ -1,7 +1,6 @@
 import java.util.HashMap;
 
 class TileFactory {
-
     private static HashMap<TileType, Tile> instancedTiles = new HashMap<>();
 
     private TileFactory() {}
@@ -15,5 +14,4 @@ class TileFactory {
             return tile;
         }
     }
-
 }

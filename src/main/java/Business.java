@@ -1,5 +1,4 @@
 class Business extends Tile {
-
     private BusinessType businessType;
     private String name;
     private Integer ownerId;
