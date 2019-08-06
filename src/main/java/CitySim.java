@@ -31,8 +31,6 @@ class CitySim {
 
         frame.add(scrollPane);
         frame.setVisible(true);
-
-        printCityTiles();
     }
 
     private static void printCityTiles() {
@@ -40,7 +38,7 @@ class CitySim {
             for (int tileX = 0; tileX < city.getWidth(); tileX++) {
                 Tile currentTile = city.getTile(tileX, tileY);
                 if (tileX % city.getWidth() == (city.getWidth() - 1)) {
-                    System.out.printf("%-20s%n%n%n", currentTile.getTileType());
+                    System.out.printf("%n%-20s%n%n%n", currentTile.getTileType());
                 } else {
                     System.out.printf("%-20s", currentTile.getTileType());
                 }
