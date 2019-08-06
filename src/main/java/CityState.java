@@ -1,45 +1,29 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 class CityState {
     private static Tile[][] tiles;
-    private static List<Business> businesses = new ArrayList<>();
+    private static ArrayList<Business> businesses = new ArrayList<>();
 
     private CityState(int width, int height) {
         tiles = new Tile[width][height];
     }
 
     static CityState createInitialState(City city) {
-        CityState state = null;
+        // TODO fix this, it doesn't feel correct
+        CityState state = new CityState(city.getWidth(), city.getHeight());
         switch (city.getType()) {
             case GUI_CITY:
-                break;
-            case DAVE_CITY:
-                break;
-            case GRID_CITY:
+                generateGuiCity();
                 break;
             case RANDOM_CITY:
-                state = new CityState(city.getWidth(), city.getHeight());
                 generateRandomCity();
                 break;
         }
         return state;
     }
 
-    private static void generateRandomCity() {
-        for (int y = 0; y < tiles[1].length; y++) {
-            for (int x = 0; x < tiles[0].length; x++) {
-                Tile currentTile = TileFactory.create(TileType.random());
-                if (currentTile.getTileType() == TileType.BUSINESS) {
-                    businesses.add(new Business());
-                }
-                tiles[x][y] = currentTile;
-            }
-        }
-    }
-
-    private void generateGuiCity() {
+    private static void generateGuiCity() {
         // horizontalRoads = random between 1 and width/2
         // verticalRoads = random between 1 and height/2
         // choose a random x coordinate and draw verticalRoads number of roads vertically
@@ -63,6 +47,19 @@ class CityState {
                 horizontalRoads--;
             }
         }
+        // TODO draw vertical roads
+    }
+
+    private static void generateRandomCity() {
+        for (int y = 0; y < tiles[1].length; y++) {
+            for (int x = 0; x < tiles[0].length; x++) {
+                Tile currentTile = TileFactory.create(TileType.random());
+                if (currentTile.getTileType() == TileType.BUSINESS) {
+                    businesses.add(new Business());
+                }
+                tiles[x][y] = currentTile;
+            }
+        }
     }
 
     Tile getTile(int x, int y) {
@@ -71,5 +68,9 @@ class CityState {
 
     Tile[][] getTiles() {
         return tiles;
+    }
+
+    ArrayList<Business> getBusinesses() {
+        return businesses;
     }
 }
