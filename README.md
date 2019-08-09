@@ -1,5 +1,6 @@
 # CitySim
 A light-hearted and not at all serious attempt at simulating a city.
+
 By: aseriesofdarkcaves and gui
 
 ## Goals
