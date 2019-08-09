@@ -1,11 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
 class CityState {
     private static Tile[][] tiles;
     private static ArrayList<Business> businesses = new ArrayList<>();
-
-    private  CityState() {}
 
     private CityState(int width, int height) {
         tiles = new Tile[width][height];
@@ -28,10 +29,28 @@ class CityState {
     }
 
     private static CityState generateCustomCity(City city) {
-        CityState state = new CityState();
+        CityState state = new CityState(20, 20);
 
-        CityBuilder cityBuilder = new CityBuilder(city.getCityFile());
+        try (BufferedReader reader = new BufferedReader(new FileReader(city.getCityFile()))) {
+            int y = 0;
+            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+                for (int x = 0; x < line.length(); x++) {
+                    switch (line.charAt(x)) {
+                        case 'g':
+                            tiles[x][y] = TileFactory.create(TileType.GRASS);
+                            break;
+                        case 'r':
+                            tiles[x][y] = TileFactory.create(TileType.ROAD);
+                            break;
+                    }
 
+                }
+                y++;
+            }
+            // do shit
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return state;
     }
 

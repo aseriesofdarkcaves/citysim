@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-
 public class CityView extends JPanel {
-
     private int mapWidth;
     private int mapHeight;
     private Image business;

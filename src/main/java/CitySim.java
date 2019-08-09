@@ -4,14 +4,15 @@ class CitySim {
     private static City city;
     private static CityView view;
     private static final String cityName = "New Temperance";
-    private static final int cityWidth = 50;
-    private static final int cityHeight = 50;
+    private static final int cityWidth = 20;
+    private static final int cityHeight = 20;
     private static final String cityFile = "src/main/resources/Knobber.ccf";
 
     public static void main(String... args) {
         long startTime = System.currentTimeMillis();
 
-        city = new City(cityName, cityWidth, cityHeight);
+//        city = new City(cityName, cityWidth, cityHeight);
+        city = new City(cityName, cityWidth, cityHeight, cityFile);
         view = new CityView(city);
 
         displayCityView();

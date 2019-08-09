@@ -11,18 +11,20 @@ class City {
         this(name, width, height, DEFAULT_TYPE);
     }
 
-    City(String name, String cityFile) {
-        this.name = name;
-        this.type = CityType.CUSTOM;
-        this.cityFile = cityFile;
-        setInitialState(this);
-    }
-
     City(String name, int width, int height, CityType type) {
         this.name = name;
         this.width = width;
         this.height = height;
         this.type = type;
+        setInitialState(this);
+    }
+
+    City(String name, int width, int height, String cityFile) {
+        this.name = name;
+        this.width = width;
+        this.height = height;
+        this.type = CityType.CUSTOM;
+        this.cityFile = cityFile;
         setInitialState(this);
     }
 
