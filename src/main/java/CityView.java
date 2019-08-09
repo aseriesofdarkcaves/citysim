@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class Map extends JPanel {
+public class CityView extends JPanel {
 
     private int mapWidth;
     private int mapHeight;
@@ -20,7 +20,7 @@ public class Map extends JPanel {
     private final City city;
     private final int TILESIZE = 12;
 
-    public Map(City city) {
+    public CityView(City city) {
         this.city = city;
         this.mapWidth = city.getWidth() * TILESIZE;
         this.mapHeight = city.getHeight() * TILESIZE;

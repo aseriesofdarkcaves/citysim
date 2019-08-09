@@ -2,6 +2,7 @@ import javax.swing.*;
 
 class CitySim {
     private static City city;
+    private static CityView view;
     private static final String cityName = "New Temperance";
     private static final int cityWidth = 50;
     private static final int cityHeight = 50;
@@ -9,21 +10,24 @@ class CitySim {
 
     public static void main(String... args) {
         long startTime = System.currentTimeMillis();
+
         city = new City(cityName, cityWidth, cityHeight);
-        // city = new City(cityFile, cityFile);
+        view = new CityView(city);
 
-        Map map = new Map(city);
+        displayCityView();
 
+        long totalProcessingTime = System.currentTimeMillis() - startTime;
+        System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
+    }
+
+    private static void displayCityView() {
         JFrame frame = new JFrame();
-        frame.add(map);
+        frame.add(view);
         frame.setResizable(true);
         frame.setTitle("CitySim");
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-
-        long totalProcessingTime = System.currentTimeMillis() - startTime;
-        System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
     }
 
     private static void displayCityTiles() {
