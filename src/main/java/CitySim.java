@@ -3,16 +3,14 @@ import javax.swing.*;
 class CitySim {
     private static City city;
     private static final String cityName = "New Temperance";
-    private static final int cityWidth = 20;
-    private static final int cityHeight = 20;
+    private static final int cityWidth = 50;
+    private static final int cityHeight = 50;
     private static final String cityFile = "src/main/resources/Knobber.ccf";
 
     public static void main(String... args) {
         long startTime = System.currentTimeMillis();
         city = new City(cityName, cityWidth, cityHeight);
         // city = new City(cityFile, cityFile);
-        long totalProcessingTime = System.currentTimeMillis() - startTime;
-        System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
 
         Map map = new Map(city);
 
@@ -24,11 +22,11 @@ class CitySim {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        // displayCityTiles();
+        long totalProcessingTime = System.currentTimeMillis() - startTime;
+        System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
     }
 
     private static void displayCityTiles() {
-        // TODO clean this shit up
         JFrame frame = new JFrame();
         frame.setBounds(0, 0,(cityWidth * 100) % 2440, (cityHeight * 50) % 1080);
         frame.setTitle(cityName);
