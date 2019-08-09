@@ -9,12 +9,12 @@ class CitySim {
 
     public static void main(String... args) {
         long startTime = System.currentTimeMillis();
-//        city = new City(cityName, cityWidth, cityHeight);
-        city = new City(cityFile, cityFile);
+        city = new City(cityName, cityWidth, cityHeight);
+        // city = new City(cityFile, cityFile);
         long totalProcessingTime = System.currentTimeMillis() - startTime;
         System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
 
-        Map map = new Map();
+        Map map = new Map(city);
 
         JFrame frame = new JFrame();
         frame.add(map);
