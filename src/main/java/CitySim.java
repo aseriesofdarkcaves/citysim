@@ -14,7 +14,17 @@ class CitySim {
         long totalProcessingTime = System.currentTimeMillis() - startTime;
         System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
 
-        displayCityTiles();
+        Map map = new Map();
+
+        JFrame frame = new JFrame();
+        frame.add(map);
+        frame.setResizable(true);
+        frame.setTitle("CitySim");
+        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        // displayCityTiles();
     }
 
     private static void displayCityTiles() {
