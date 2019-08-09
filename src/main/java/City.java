@@ -1,13 +1,21 @@
+import java.io.File;
+
 class City {
     private String name;
     private int width;
     private int height;
     private final CityType type;
     private CityState state;
-    private static final CityType DEFAULT_TYPE = CityType.RANDOM_CITY;
+    private static final CityType DEFAULT_TYPE = CityType.RANDOM;
 
     City(String name, int width, int height) {
         this(name, width, height, DEFAULT_TYPE);
+    }
+
+    City(String name, File cityFile) {
+        this.name = name;
+        this.type = CityType.CUSTOM;
+        setInitialState(this);
     }
 
     City(String name, int width, int height, CityType type) {
@@ -15,7 +23,11 @@ class City {
         this.width = width;
         this.height = height;
         this.type = type;
-        this.state = CityState.createInitialState(this);
+        setInitialState(this);
+    }
+
+    private void setInitialState(City city) {
+        this.state = CityState.createInitialState(city);
     }
 
     String getName() {
