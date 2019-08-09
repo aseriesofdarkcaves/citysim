@@ -1,5 +1,6 @@
 # CitySim
 A light-hearted and not at all serious attempt at simulating a city.
+By: aseriesofdarkcaves and gui
 
 ## Goals
 - Quick (within ~10 seconds) generation of a city of 1000 x 1000 tiles
