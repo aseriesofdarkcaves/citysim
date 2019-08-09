@@ -2,10 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class Map extends JPanel {
+public class CityView extends JPanel {
 
-    private final int WIDTH = 640;
-    private final int HEIGHT = 480;
+    private int mapWidth;
+    private int mapHeight;
     private Image business;
     private Image grass;
     private Image municipal;
@@ -20,10 +20,12 @@ public class Map extends JPanel {
     private final City city;
     private final int TILESIZE = 12;
 
-    public Map(City city) {
+    public CityView(City city) {
+        this.city = city;
+        this.mapWidth = city.getWidth() * TILESIZE;
+        this.mapHeight = city.getHeight() * TILESIZE;
         loadImages();
         createBoard();
-        this.city = city;
     }
 
     @Override
@@ -102,7 +104,7 @@ public class Map extends JPanel {
     private void createBoard() {
         setBackground(Color.pink);
         setFocusable(true);
-        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        setPreferredSize(new Dimension(mapWidth, mapHeight));
     }
 
 
