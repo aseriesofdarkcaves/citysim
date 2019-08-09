@@ -37,10 +37,22 @@ public class Map extends JPanel {
         business = businessIcon.getImage();
         ImageIcon grassIcon = new ImageIcon("src/main/resources/tiles/grass.png");
         grass = grassIcon.getImage();
-        ImageIcon residentialIcon = new ImageIcon("src/main/resources/tiles/residential.png");
-        residential = residentialIcon.getImage();
-        ImageIcon streetIcon = new ImageIcon("src/main/resources/tiles/road.png");
-        road = streetIcon.getImage();
+        ImageIcon municipalIcon = new ImageIcon("src/main/resources/tiles/municipal.png");
+        municipal = municipalIcon.getImage();
+        ImageIcon parkIcon = new ImageIcon("src/main/resources/tiles/park.png");
+        park = parkIcon.getImage();
+        ImageIcon riverIcon = new ImageIcon("src/main/resources/tiles/river.png");
+        river = riverIcon.getImage();
+        ImageIcon riverBankIcon = new ImageIcon("src/main/resources/tiles/riverBank.png");
+        riverBank = riverBankIcon.getImage();
+        ImageIcon roadIcon = new ImageIcon("src/main/resources/tiles/road.png");
+        road = roadIcon.getImage();
+        ImageIcon sidewaklIcon = new ImageIcon("src/main/resources/tiles/sidewalk.png");
+        sidewalk = sidewaklIcon.getImage();
+        ImageIcon trainLineIcon = new ImageIcon("src/main/resources/tiles/trainLine.png");
+        trainLine = trainLineIcon.getImage();
+        ImageIcon tramLineIcon = new ImageIcon("src/main/resources/tiles/tramLine.png");
+        tramLine = tramLineIcon.getImage();
     }
 
 
@@ -56,6 +68,7 @@ public class Map extends JPanel {
                         tempImage = grass;
                         break;
                     case MUNICIPAL:
+                        tempImage = municipal;
                         break;
                     case PARK:
                         break;
@@ -63,17 +76,22 @@ public class Map extends JPanel {
                         tempImage = residential;
                         break;
                     case RIVER:
+                        tempImage = river;
                         break;
                     case RIVERBANK:
+                        tempImage = riverBank;
                         break;
                     case ROAD:
                         tempImage = road;
                         break;
                     case SIDEWALK:
+                        tempImage = sidewalk;
                         break;
                     case TRAINLINE:
+                        tempImage = trainLine;
                         break;
                     case TRAMLINE:
+                        tempImage = tramLine;
                         break;
                 }
                 g.drawImage(tempImage, x * TILESIZE, y * TILESIZE, this);
