@@ -1,20 +1,20 @@
-import java.io.File;
-
 class City {
     private String name;
     private int width;
     private int height;
     private final CityType type;
     private CityState state;
+    private String cityFile;
     private static final CityType DEFAULT_TYPE = CityType.RANDOM;
 
     City(String name, int width, int height) {
         this(name, width, height, DEFAULT_TYPE);
     }
 
-    City(String name, File cityFile) {
+    City(String name, String cityFile) {
         this.name = name;
         this.type = CityType.CUSTOM;
+        this.cityFile = cityFile;
         setInitialState(this);
     }
 
@@ -60,5 +60,9 @@ class City {
 
     CityState getState() {
         return state;
+    }
+
+    String getCityFile() {
+        return cityFile;
     }
 }

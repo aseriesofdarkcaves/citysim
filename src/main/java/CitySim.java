@@ -5,11 +5,12 @@ class CitySim {
     private static final String cityName = "New Temperance";
     private static final int cityWidth = 20;
     private static final int cityHeight = 20;
+    private static final String cityFile = "src/main/resources/Knobber.ccf";
 
     public static void main(String... args) {
-        System.out.printf("Generating %s with %d tiles...%n", cityName, cityWidth * cityHeight);
         long startTime = System.currentTimeMillis();
-        city = new City(cityName, cityWidth, cityHeight);
+//        city = new City(cityName, cityWidth, cityHeight);
+        city = new City(cityFile, cityFile);
         long totalProcessingTime = System.currentTimeMillis() - startTime;
         System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
 

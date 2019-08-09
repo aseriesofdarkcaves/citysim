@@ -28,8 +28,10 @@ class CityState {
     }
 
     private static CityState generateCustomCity(City city) {
-        // TODO BufferedFileReader wrapper class CityBuilder?
         CityState state = new CityState();
+
+        CityBuilder cityBuilder = new CityBuilder(city.getCityFile());
+
         return state;
     }
 
@@ -65,6 +67,7 @@ class CityState {
 
     private static CityState generateRandomCity(City city) {
         CityState state = new CityState(city.getWidth(), city.getHeight());
+
         for (int y = 0; y < tiles[1].length; y++) {
             for (int x = 0; x < tiles[0].length; x++) {
                 Tile currentTile = TileFactory.create(TileType.random());
