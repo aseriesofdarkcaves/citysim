@@ -29,7 +29,8 @@ class CityState {
     }
 
     private static CityState generateCustomCity(City city) {
-        CityState state = new CityState(20, 20);
+        // TODO we can't know the width and height before parsing the file
+        CityState state = new CityState(city.getWidth(), city.getHeight());
 
         try (BufferedReader reader = new BufferedReader(new FileReader(city.getCityFile()))) {
             int y = 0;
@@ -47,7 +48,6 @@ class CityState {
                 }
                 y++;
             }
-            // do shit
         } catch (IOException e) {
             e.printStackTrace();
         }

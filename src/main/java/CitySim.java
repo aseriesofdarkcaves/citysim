@@ -10,13 +10,10 @@ class CitySim {
 
     public static void main(String... args) {
         long startTime = System.currentTimeMillis();
-
-//        city = new City(cityName, cityWidth, cityHeight);
+        // loading in a custom city
         city = new City(cityName, cityWidth, cityHeight, cityFile);
         view = new CityView(city);
-
         displayCityView();
-
         long totalProcessingTime = System.currentTimeMillis() - startTime;
         System.out.printf("Time taken to generate %s: %dms", cityName, totalProcessingTime);
     }

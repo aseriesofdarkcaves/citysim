@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CityView extends JPanel {
-    private int mapWidth;
-    private int mapHeight;
+    private int viewWidth;
+    private int viewHeight;
     private Image business;
     private Image grass;
     private Image municipal;
@@ -20,10 +20,10 @@ public class CityView extends JPanel {
 
     public CityView(City city) {
         this.city = city;
-        this.mapWidth = city.getWidth() * TILESIZE;
-        this.mapHeight = city.getHeight() * TILESIZE;
+        this.viewWidth = city.getWidth() * TILESIZE;
+        this.viewHeight = city.getHeight() * TILESIZE;
         loadImages();
-        createBoard();
+        createView();
     }
 
     @Override
@@ -41,6 +41,8 @@ public class CityView extends JPanel {
         municipal = municipalIcon.getImage();
         ImageIcon parkIcon = new ImageIcon("src/main/resources/tiles/park.png");
         park = parkIcon.getImage();
+        ImageIcon residentialIcon = new ImageIcon("src/main/resources/tiles/residential.png");
+        residential = residentialIcon.getImage();
         ImageIcon riverIcon = new ImageIcon("src/main/resources/tiles/river.png");
         river = riverIcon.getImage();
         ImageIcon riverBankIcon = new ImageIcon("src/main/resources/tiles/riverBank.png");
@@ -54,7 +56,6 @@ public class CityView extends JPanel {
         ImageIcon tramLineIcon = new ImageIcon("src/main/resources/tiles/tramLine.png");
         tramLine = tramLineIcon.getImage();
     }
-
 
     private void drawTiles(Graphics g) {
         for(int y = 0; y < city.getHeight(); y++) {
@@ -71,6 +72,7 @@ public class CityView extends JPanel {
                         tempImage = municipal;
                         break;
                     case PARK:
+                        tempImage = park;
                         break;
                     case RESIDENTIAL:
                         tempImage = residential;
@@ -99,12 +101,9 @@ public class CityView extends JPanel {
         }
     }
 
-    private void createBoard() {
-        setBackground(Color.pink);
+    private void createView() {
+        setBackground(Color.PINK);
         setFocusable(true);
-        setPreferredSize(new Dimension(mapWidth, mapHeight));
+        setPreferredSize(new Dimension(viewWidth, viewHeight));
     }
-
-
-
 }

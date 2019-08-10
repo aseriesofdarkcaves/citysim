@@ -19,6 +19,7 @@ class City {
         setInitialState(this);
     }
 
+    // TODO we can't know the width and height before parsing the file
     City(String name, int width, int height, String cityFile) {
         this.name = name;
         this.width = width;
