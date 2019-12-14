@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 class Business extends Tile {
     private BusinessType businessType;
     private String name;

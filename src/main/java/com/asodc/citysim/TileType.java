@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 import java.util.Random;
 
 enum TileType {

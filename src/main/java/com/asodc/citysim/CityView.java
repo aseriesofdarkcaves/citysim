@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 import javax.swing.*;
 import java.awt.*;
 

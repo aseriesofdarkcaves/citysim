@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 class Tile {
     private final TileType type;
 

@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 import javax.swing.*;
 
 class CitySim {
@@ -22,7 +24,7 @@ class CitySim {
         JFrame frame = new JFrame();
         frame.add(view);
         frame.setResizable(true);
-        frame.setTitle("CitySim");
+        frame.setTitle("com.asodc.citysim.CitySim");
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);

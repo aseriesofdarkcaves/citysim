@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 class City {
     private String name;
     private int width;

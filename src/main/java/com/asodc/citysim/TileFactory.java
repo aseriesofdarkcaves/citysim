@@ -1,3 +1,5 @@
+package com.asodc.citysim;
+
 import java.util.HashMap;
 
 class TileFactory {
