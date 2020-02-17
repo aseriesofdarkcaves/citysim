@@ -1,4 +1,4 @@
-package com.asodc.citysim.ui;
+package com.asodc.citysim;
 
 import javax.swing.*;
 import java.awt.*;
