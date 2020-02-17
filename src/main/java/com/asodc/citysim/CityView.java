@@ -3,7 +3,7 @@ package com.asodc.citysim;
 import javax.swing.*;
 import java.awt.*;
 
-public class CityView extends JPanel {
+class CityView extends JPanel {
     private int viewWidth;
     private int viewHeight;
     private Image business;
@@ -29,9 +29,9 @@ public class CityView extends JPanel {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        drawTiles(g);
+    public void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        drawTiles(graphics);
     }
 
     private void loadImages() {
@@ -59,7 +59,7 @@ public class CityView extends JPanel {
         tramLine = tramLineIcon.getImage();
     }
 
-    private void drawTiles(Graphics g) {
+    private void drawTiles(Graphics graphics) {
         for(int y = 0; y < city.getHeight(); y++) {
             for(int x = 0; x < city.getWidth(); x++) {
                 Image tempImage = road;
@@ -98,7 +98,7 @@ public class CityView extends JPanel {
                         tempImage = tramLine;
                         break;
                 }
-                g.drawImage(tempImage, x * TILESIZE, y * TILESIZE, this);
+                graphics.drawImage(tempImage, x * TILESIZE, y * TILESIZE, this);
             }
         }
     }
