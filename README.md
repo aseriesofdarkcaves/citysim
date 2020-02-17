@@ -3,9 +3,21 @@ A light-hearted and not at all serious attempt at simulating a city.
 
 By: aseriesofdarkcaves and gui
 
-## Goals
-- Quick (within ~10 seconds) generation of a city of 1000 x 1000 tiles
-- Some form of GUI (whatever that means...) that shows the people going about their business and provides info about the queried object
-- A city has a fixed number of citizens at runtime (no births or deaths)
-- Citizens go about their daily business as you'd expect from a real city
-- Citizens can use cars or public transport (or walk) to their destinations
+## Initial Goals
+- Form-based GUI that contains:
+-- a 2D map of generated city (initially blank)
+-- user input fields for the parameters used to generate a city
+-- the ability to generate and regenerate a city based on the user input fields
+-- read-only section to show the last generated parameters
+- The program should generate a plan of the city with various tile types
+-- use strategy pattern to decouple generation algorithms from the city
+
+## Future Goals
+- Simulation:
+-- add time to the city (the ability for things to change within the city)
+-- ability to speed up or slow down time
+- Add citizens:
+-- citizens have various goals and go about their daily business as you'd expect from a real city
+- Add transport:
+-- automobiles
+-- public transport
