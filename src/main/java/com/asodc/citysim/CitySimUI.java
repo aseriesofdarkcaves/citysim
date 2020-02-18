@@ -4,22 +4,22 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CitySimUI {
-    private JFrame frame;
-    private JPanel uiPanel;
-    private JPanel mapPanel;
-    private JPanel controlPanel;
-    private JPanel infoPanel;
-    private JPanel inputPanel;
-    private JPanel buttonPanel;
-    private JLabel mapPanelLabel;
-    private JLabel controlPanelLabel;
-    private JLabel xSizeInfoLabel;
-    private JLabel ySizeInfoLabel;
-    private JLabel xSizeInputLabel;
-    private JLabel ySizeInputLabel;
-    private JTextField xSizeInputTextField;
-    private JTextField ySizeInputTextField;
-    private JButton generateButton;
+    private final JFrame frame;
+    private final JPanel uiPanel;
+    private final JPanel mapPanel;
+    private final JPanel controlPanel;
+    private final JPanel infoPanel;
+    private final JPanel inputPanel;
+    private final JPanel buttonPanel;
+    private final JLabel mapPanelLabel;
+    private final JLabel controlPanelLabel;
+    private final JLabel xSizeInfoLabel;
+    private final JLabel ySizeInfoLabel;
+    private final JLabel xSizeInputLabel;
+    private final JLabel ySizeInputLabel;
+    private final JTextField xSizeInputTextField;
+    private final JTextField ySizeInputTextField;
+    private final JButton generateButton;
 
     /**
      * uiPanel: FlowLayout
