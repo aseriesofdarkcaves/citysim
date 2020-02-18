@@ -1,24 +1,26 @@
-package com.asodc.citysim;
+package com.asodc.citysim.mvc;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class CitySimUI {
+public class CityView {
     private final JFrame frame;
     private final JPanel uiPanel;
-    private final JPanel mapPanel;
+    private final MapPanel mapPanel;
     private final JPanel controlPanel;
     private final JPanel infoPanel;
     private final JPanel inputPanel;
     private final JPanel buttonPanel;
     private final JLabel mapPanelLabel;
     private final JLabel controlPanelLabel;
-    private final JLabel xSizeInfoLabel;
-    private final JLabel ySizeInfoLabel;
-    private final JLabel xSizeInputLabel;
-    private final JLabel ySizeInputLabel;
-    private final JTextField xSizeInputTextField;
-    private final JTextField ySizeInputTextField;
+    private final JLabel widthInfoLabelKey;
+    private final JLabel widthInfoLabelValue;
+    private final JLabel heightInfoLabelKey;
+    private final JLabel heightInfoLabelValue;
+    private final JLabel widthInputLabel;
+    private final JLabel heightInputLabel;
+    private final JTextField widthInputTextField;
+    private final JTextField heightInputTextField;
     private final JButton generateButton;
 
     /**
@@ -29,8 +31,8 @@ public class CitySimUI {
      *         inputPanel
      *         buttonPanel
      */
-    public CitySimUI() {
-        // TODO: refactor logic to private methods
+    public CityView() {
+        // TODO: refactor init logic to private submethods
         // set up JFrame
         frame = new JFrame("CitySim");
         frame.setSize(1000,500);
@@ -41,7 +43,7 @@ public class CitySimUI {
         uiPanel = new JPanel(new FlowLayout());
 
         // mapPanel currently empty
-        mapPanel = new JPanel();
+        mapPanel = new MapPanel();
         mapPanelLabel = new JLabel("Map");
         mapPanel.add(mapPanelLabel);
 
@@ -54,21 +56,25 @@ public class CitySimUI {
 
         // infoPanel contains information about the currently generated city
         infoPanel = new JPanel();
-        xSizeInfoLabel = new JLabel("x: 0");
-        ySizeInfoLabel = new JLabel("y: 0");
-        infoPanel.add(xSizeInfoLabel);
-        infoPanel.add(ySizeInfoLabel);
+        widthInfoLabelKey = new JLabel("x:");
+        widthInfoLabelValue = new JLabel("0");
+        heightInfoLabelKey = new JLabel("y:");
+        heightInfoLabelValue = new JLabel("0");
+        infoPanel.add(widthInfoLabelKey);
+        infoPanel.add(widthInfoLabelValue);
+        infoPanel.add(heightInfoLabelKey);
+        infoPanel.add(heightInfoLabelValue);
 
         // inputPanel allows the user to input values
         inputPanel = new JPanel();
-        xSizeInputLabel = new JLabel("x:");
-        xSizeInputTextField = new JTextField("10");
-        ySizeInputLabel = new JLabel("y:");
-        ySizeInputTextField = new JTextField("10");
-        inputPanel.add(xSizeInputLabel);
-        inputPanel.add(xSizeInputTextField);
-        inputPanel.add(ySizeInputLabel);
-        inputPanel.add(ySizeInputTextField);
+        widthInputLabel = new JLabel("x:");
+        widthInputTextField = new JTextField("0");
+        heightInputLabel = new JLabel("y:");
+        heightInputTextField = new JTextField("0");
+        inputPanel.add(widthInputLabel);
+        inputPanel.add(widthInputTextField);
+        inputPanel.add(heightInputLabel);
+        inputPanel.add(heightInputTextField);
 
         // buttonPanel contains the buttons
         buttonPanel = new JPanel();
@@ -86,7 +92,38 @@ public class CitySimUI {
         uiPanel.setOpaque(true);
 
         frame.setContentPane(uiPanel);
+        // TODO: delegate this to the controller?
         frame.setVisible(true);
+    }
+
+    public JButton getGenerateButton() {
+        return generateButton;
+    }
+
+    // TODO: return Swing objects or primatives?
+    // TODO: manage negative inputs here?
+    public int getWidthInput() {
+        try {
+            return Integer.parseInt(widthInputTextField.getText());
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    public int getHeightInput() {
+        try {
+            return Integer.parseInt(heightInputTextField.getText());
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    public void setWidthInfo(int value) {
+        widthInfoLabelValue.setText(Integer.toString(value));
+    }
+
+    public void setHeightInfo(int value) {
+        heightInfoLabelValue.setText(Integer.toString(value));
     }
 
     public void setLayoutDebugMode(boolean isDebugModeEnabled) {
