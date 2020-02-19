@@ -3,9 +3,8 @@ package com.asodc.citysim.mvc;
 import javax.swing.*;
 import java.awt.*;
 
-public class MapPanel extends JPanel {
-    private int width;
-    private int height;
+public class MapView extends JPanel {
+    private CityModel city;
     private Image business;
     private Image grass;
     private Image municipal;
@@ -18,13 +17,10 @@ public class MapPanel extends JPanel {
     private Image trainLine;
     private Image tramLine;
 
-    public MapPanel() {
-        // default is nothing
-    }
+    public MapView() {}
 
-    public MapPanel(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public MapView(CityModel city) {
+        this.city = city;
         initImages();
     }
 
@@ -55,12 +51,12 @@ public class MapPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics graphics) {
+        // TODO: find out how this works
         super.paintComponent(graphics);
         drawMap(graphics);
     }
 
     private void drawMap(Graphics graphics) {
-        // draw the map
         graphics.drawImage(business, 0, 0, this);
     }
 }

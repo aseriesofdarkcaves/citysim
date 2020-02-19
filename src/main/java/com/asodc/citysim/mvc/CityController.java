@@ -17,7 +17,10 @@ public class CityController {
         view.getGenerateButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // update the model
                 city = new CityModel(view.getWidthInput(), view.getHeightInput());
+                // update the view by passing the new model to it
+                view.update(city);
             }
         });
     }
