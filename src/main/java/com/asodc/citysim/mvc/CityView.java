@@ -126,19 +126,12 @@ public class CityView {
         }
     }
 
-    public void setWidthInfo(int value) {
-        widthInfoLabelValue.setText(Integer.toString(value));
-    }
-
-    public void setHeightInfo(int value) {
-        heightInfoLabelValue.setText(Integer.toString(value));
-    }
-
     public void update(CityModel city) {
         widthInfoLabelValue.setText(Integer.toString(city.getWidth()));
         heightInfoLabelValue.setText(Integer.toString(city.getHeight()));
         mapView = new MapView(city);
         mapView.repaint();
+        frame.pack();
     }
 
     public void setLayoutDebugMode(boolean isDebugModeEnabled) {

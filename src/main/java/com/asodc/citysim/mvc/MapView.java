@@ -51,12 +51,9 @@ public class MapView extends JPanel {
 
     @Override
     public void paintComponent(Graphics graphics) {
-        // TODO: find out how this works
         super.paintComponent(graphics);
-        drawMap(graphics);
-    }
-
-    private void drawMap(Graphics graphics) {
-        graphics.drawImage(business, 0, 0, this);
+        // TODO: find out the best way to draw the map
+//        graphics.drawImage(business, 0, 0, this);
+        graphics.drawString("-----PLACEHOLDER-----",0,0);
     }
 }
