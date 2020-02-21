@@ -21,12 +21,10 @@ public class CityModel {
     }
 
     private void generateCity() {
-        // TODO: add random tiles
-        // this currently just sets all the tiles to grass
-        Tile tile = new Tile(TileType.GRASS);
+        // currently generates random tiles
         for (int y = 0; y < tiles[1].length; y++) {
             for (int x = 0; x < tiles[0].length; x++) {
-                tiles[x][y] = tile;
+                tiles[x][y] = new Tile(TileType.random());
             }
         }
     }
