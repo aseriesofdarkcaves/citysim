@@ -1,4 +1,4 @@
-package com.asodc.citysim;
+package com.asodc.citysim.dunno;
 
 class City {
     private String name;

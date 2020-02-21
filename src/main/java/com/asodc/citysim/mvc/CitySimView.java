@@ -3,8 +3,8 @@ package com.asodc.citysim.mvc;
 import javax.swing.*;
 import java.awt.*;
 
-public class CityView {
-    private MapView mapView;
+public class CitySimView {
+    private CityMap cityMap;
     private final JFrame frame;
     private final JPanel mainPanel;
     private final JPanel mapPanel;
@@ -37,7 +37,7 @@ public class CityView {
      *         inputPanel
      *         buttonPanel
      */
-    public CityView() {
+    public CitySimView() {
         frame = new JFrame("CitySim");
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,13 +45,14 @@ public class CityView {
         // mainPanel will be used as the contentPane
         mainPanel = new JPanel(new FlowLayout());
 
-        // mapView initially empty
+        // mapPanel
         mapPanel = new JPanel();
         mapPanel.setLayout(new BoxLayout(mapPanel, BoxLayout.Y_AXIS));
         mapPanelLabel = new JLabel("Map Panel");
-        mapView = new MapView();
         mapPanel.add(mapPanelLabel);
-        mapPanel.add(mapView);
+        cityMap = new CityMap();
+        cityMap.setName("cityMap");
+        mapPanel.add(cityMap);
 
         // controlPanel contains 3 sub-panels: infoPanel, inputPanel & buttonPanel
         controlPanel = new JPanel();
@@ -126,11 +127,20 @@ public class CityView {
         }
     }
 
-    public void update(CityModel city) {
-        widthInfoLabelValue.setText(Integer.toString(city.getWidth()));
-        heightInfoLabelValue.setText(Integer.toString(city.getHeight()));
-        mapView = new MapView(city);
-        mapView.repaint();
+    public void update(CityModel cityModel) {
+        widthInfoLabelValue.setText(Integer.toString(cityModel.getWidth()));
+        heightInfoLabelValue.setText(Integer.toString(cityModel.getHeight()));
+        cityMap = new CityMap(cityModel);
+        // TODO: clean this up if possible
+        // option 1:  removing and re-adding cityMap from the mapPanel (works, but ugh)
+        mapPanel.remove(cityMap);
+        mapPanel.add(cityMap);
+        // option 2: revalidate/repaint cityMap (nope)
+//        cityMap.revalidate();
+//        cityMap.repaint();
+        // option 3: revalidate/repaint mapPanel (nope)
+//        mapPanel.revalidate();
+//        mapPanel.repaint();
         frame.pack();
     }
 
@@ -139,7 +149,7 @@ public class CityView {
             frame.setBackground(Color.YELLOW);
             mainPanel.setBackground(Color.PINK);
             mapPanel.setBackground(Color.MAGENTA);
-            mapView.setBackground(Color.BLUE);
+            cityMap.setBackground(Color.BLUE);
             controlPanel.setBackground(Color.CYAN);
             infoPanel.setBackground(Color.GREEN);
             inputPanel.setBackground(Color.ORANGE);

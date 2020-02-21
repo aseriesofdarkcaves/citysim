@@ -1,4 +1,4 @@
-package com.asodc.citysim;
+package com.asodc.citysim.dunno;
 
 import javax.swing.*;
 
@@ -24,7 +24,7 @@ class CitySim {
         JFrame frame = new JFrame();
         frame.add(view);
         frame.setResizable(true);
-        frame.setTitle("com.asodc.citysim.CitySim");
+        frame.setTitle("com.asodc.citysim.dunno.CitySim");
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);

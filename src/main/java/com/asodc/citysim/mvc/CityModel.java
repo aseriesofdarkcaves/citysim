@@ -1,23 +1,38 @@
 package com.asodc.citysim.mvc;
 
-import com.asodc.citysim.utilities.Numerics;
-
 public class CityModel {
     private int width;
     private int height;
+    private Tile[][] tiles;
 
     public CityModel() {
-        // initial state at program start is a city with zero size
-        this(0, 0);
+        this(10, 10);
     }
 
     public CityModel(int width, int height) {
-        if(Numerics.isPositive(width) && Numerics.isPositive(height)) {
+        if (width > 0 && height > 0) {
             this.width = width;
             this.height = height;
+            this.tiles = new Tile[width][height];
+            generateCity();
         } else {
-            throw new IllegalArgumentException("City dimensions cannot be negative");
+            throw new IllegalArgumentException("City dimensions cannot be zero or negative");
         }
+    }
+
+    private void generateCity() {
+        // TODO: add random tiles
+        // this currently just sets all the tiles to grass
+        Tile tile = new Tile(TileType.GRASS);
+        for (int y = 0; y < tiles[1].length; y++) {
+            for (int x = 0; x < tiles[0].length; x++) {
+                tiles[x][y] = tile;
+            }
+        }
+    }
+
+    public Tile[][] getTiles() {
+        return tiles;
     }
 
     public int getWidth() {

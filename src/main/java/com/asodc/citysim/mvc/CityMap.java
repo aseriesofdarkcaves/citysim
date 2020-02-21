@@ -3,8 +3,10 @@ package com.asodc.citysim.mvc;
 import javax.swing.*;
 import java.awt.*;
 
-public class MapView extends JPanel {
-    private CityModel city;
+public class CityMap extends JPanel {
+    private int mapWidth;
+    private int mapHeight;
+    private CityModel cityModel;
     private Image business;
     private Image grass;
     private Image municipal;
@@ -16,11 +18,19 @@ public class MapView extends JPanel {
     private Image sidewalk;
     private Image trainLine;
     private Image tramLine;
+    private boolean isModelInitialised = false;
+    private final int TILE_PIXEL_SIZE = 12;
 
-    public MapView() {}
+    public CityMap() {}
 
-    public MapView(CityModel city) {
-        this.city = city;
+    public CityMap(CityModel cityModel) {
+        this.mapWidth = cityModel.getWidth() * TILE_PIXEL_SIZE;
+        this.mapHeight = cityModel.getHeight() * TILE_PIXEL_SIZE;
+        this.cityModel = cityModel;
+        isModelInitialised = true;
+        // apparently this method is important for updates?
+        setPreferredSize(new Dimension(mapWidth, mapHeight));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK));
         initImages();
     }
 
@@ -52,8 +62,20 @@ public class MapView extends JPanel {
     @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        // TODO: find out the best way to draw the map
-//        graphics.drawImage(business, 0, 0, this);
-        graphics.drawString("-----PLACEHOLDER-----",0,0);
+        if (isModelInitialised) {
+            paintTiles(graphics);
+        }
+    }
+
+    private void paintTiles(Graphics graphics) {
+        Tile[][] tiles = cityModel.getTiles();
+        for (int y = 0; y < tiles[1].length; y++) {
+            for (int x = 0; x < tiles[0].length; x++) {
+                // TODO: implement drawing of map tiles based on encountered tile type
+                // check tile type
+                // draw corresponding tile in view
+                graphics.drawImage(grass, x * TILE_PIXEL_SIZE, y * TILE_PIXEL_SIZE, this);
+            }
+        }
     }
 }
