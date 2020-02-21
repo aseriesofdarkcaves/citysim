@@ -6,7 +6,7 @@ public class CityModel {
     private Tile[][] tiles;
 
     public CityModel() {
-        this(10, 10);
+//        this(10, 10);
     }
 
     public CityModel(int width, int height) {
@@ -22,8 +22,9 @@ public class CityModel {
 
     private void generateCity() {
         // currently generates random tiles
-        for (int y = 0; y < tiles[1].length; y++) {
-            for (int x = 0; x < tiles[0].length; x++) {
+        // note how the getting the length of 2D arrays work
+        for (int y = 0; y < tiles[0].length; y++) {
+            for (int x = 0; x < tiles.length; x++) {
                 tiles[x][y] = new Tile(TileType.random());
             }
         }

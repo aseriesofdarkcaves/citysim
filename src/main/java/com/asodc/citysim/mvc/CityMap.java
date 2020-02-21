@@ -72,8 +72,9 @@ public class CityMap extends JPanel {
 
     private void paintTiles(Graphics graphics) {
         Tile[][] tiles = cityModel.getTiles();
-        for (int y = 0; y < tiles[1].length; y++) {
-            for (int x = 0; x < tiles[0].length; x++) {
+        // note how the getting the length of 2D arrays work
+        for (int y = 0; y < tiles[0].length; y++) {
+            for (int x = 0; x < tiles.length; x++) {
                 TileType currentTileType = tiles[x][y].getTileType();
                 graphics.drawImage(getImage(currentTileType), x * TILE_PIXEL_SIZE, y * TILE_PIXEL_SIZE, this);
             }
