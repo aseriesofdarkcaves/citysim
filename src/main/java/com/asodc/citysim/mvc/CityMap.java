@@ -9,6 +9,7 @@ public class CityMap extends JPanel {
     private CityModel cityModel;
     private Image business;
     private Image grass;
+    private Image invalid;
     private Image municipal;
     private Image park;
     private Image residential;
@@ -39,6 +40,8 @@ public class CityMap extends JPanel {
         business = businessIcon.getImage();
         ImageIcon grassIcon = new ImageIcon("src/main/resources/tiles/grass.png");
         grass = grassIcon.getImage();
+        ImageIcon invalidIcon = new ImageIcon("src/main/resources/tiles/invalid.png");
+        invalid = invalidIcon.getImage();
         ImageIcon municipalIcon = new ImageIcon("src/main/resources/tiles/municipal.png");
         municipal = municipalIcon.getImage();
         ImageIcon parkIcon = new ImageIcon("src/main/resources/tiles/park.png");
@@ -71,11 +74,37 @@ public class CityMap extends JPanel {
         Tile[][] tiles = cityModel.getTiles();
         for (int y = 0; y < tiles[1].length; y++) {
             for (int x = 0; x < tiles[0].length; x++) {
-                // TODO: implement drawing of map tiles based on encountered tile type
-                // check tile type
-                // draw corresponding tile in view
-                graphics.drawImage(grass, x * TILE_PIXEL_SIZE, y * TILE_PIXEL_SIZE, this);
+                TileType currentTileType = tiles[x][y].getTileType();
+                graphics.drawImage(getImage(currentTileType), x * TILE_PIXEL_SIZE, y * TILE_PIXEL_SIZE, this);
             }
         }
+    }
+
+    private Image getImage(TileType tileType) {
+        switch (tileType) {
+            case BUSINESS:
+                return business;
+            case GRASS:
+                return grass;
+            case MUNICIPAL:
+                return municipal;
+            case PARK:
+                return park;
+            case RESIDENTIAL:
+                return residential;
+            case RIVER:
+                return river;
+            case RIVERBANK:
+                return riverBank;
+            case ROAD:
+                return road;
+            case SIDEWALK:
+                return sidewalk;
+            case TRAINLINE:
+                return trainLine;
+            case TRAMLINE:
+                return tramLine;
+        }
+        return invalid;
     }
 }
