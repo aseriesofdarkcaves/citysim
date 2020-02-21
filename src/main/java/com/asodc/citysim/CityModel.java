@@ -5,9 +5,7 @@ public class CityModel {
     private int height;
     private Tile[][] tiles;
 
-    public CityModel() {
-//        this(10, 10);
-    }
+    public CityModel() {}
 
     public CityModel(int width, int height) {
         if (width > 0 && height > 0) {
