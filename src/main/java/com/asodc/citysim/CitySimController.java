@@ -17,9 +17,8 @@ public class CitySimController {
         view.getGenerateButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // update the model
-                cityModel = new CityModel(view.getWidthInput(), view.getHeightInput());
-                // update the view by passing the new model to it
+                // TODO: extract GenerationStrategy to allow generation based on user input (combobox etc.)
+                cityModel = new CityModel(new RandomCity(view.getWidthInput(), view.getHeightInput()));
                 view.update(cityModel);
             }
         });

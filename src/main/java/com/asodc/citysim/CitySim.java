@@ -17,7 +17,7 @@ public class CitySim {
         CityModel cityModel = new CityModel();
 
         CitySimView view = new CitySimView();
-        view.setLayoutDebugMode(true);
+//        view.setLayoutDebugMode(true);
 
         CitySimController controller = new CitySimController(cityModel, view);
     }
