@@ -1,4 +1,4 @@
-package com.asodc.citysim.mvc;
+package com.asodc.citysim;
 
 public class CityModel {
     private int width;
