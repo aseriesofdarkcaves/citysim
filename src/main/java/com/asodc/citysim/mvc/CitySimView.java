@@ -27,7 +27,7 @@ public class CitySimView {
     private final JButton generateButton;
 
     /**
-     * Heirarchy of UI containers
+     * Heirarchy of containers inside JFrame
      *
      * mainPanel :: FlowLayout
      *     mapPanel :: BoxLayout
@@ -38,9 +38,6 @@ public class CitySimView {
      *         buttonPanel
      */
     public CitySimView() {
-        frame = new JFrame("CitySim");
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // mainPanel will be used as the contentPane
         mainPanel = new JPanel(new FlowLayout());
@@ -78,9 +75,9 @@ public class CitySimView {
         inputPanel = new JPanel();
         inputPanelLabel = new JLabel("Input Panel");
         widthInputLabel = new JLabel("x:");
-        widthInputTextField = new JTextField("0");
+        widthInputTextField = new JTextField("10");
         heightInputLabel = new JLabel("y:");
-        heightInputTextField = new JTextField("0");
+        heightInputTextField = new JTextField("10");
         inputPanel.add(inputPanelLabel);
         inputPanel.add(widthInputLabel);
         inputPanel.add(widthInputTextField);
@@ -102,6 +99,11 @@ public class CitySimView {
         // I think this stops repainting of everything behind it, should be ok for now
         mainPanel.setOpaque(true);
 
+        // init frame
+        frame = new JFrame("CitySim");
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(500, 500));
         frame.setContentPane(mainPanel);
         frame.pack();
         frame.setVisible(true);
@@ -130,18 +132,12 @@ public class CitySimView {
     public void update(CityModel cityModel) {
         widthInfoLabelValue.setText(Integer.toString(cityModel.getWidth()));
         heightInfoLabelValue.setText(Integer.toString(cityModel.getHeight()));
-        cityMap = new CityMap(cityModel);
-        // TODO: clean this up if possible
-        // option 1:  removing and re-adding cityMap from the mapPanel (works, but ugh)
+        // remove the old cityMap before creating a new one
         mapPanel.remove(cityMap);
+        cityMap = new CityMap(cityModel);
         mapPanel.add(cityMap);
-        // option 2: revalidate/repaint cityMap (nope)
-//        cityMap.revalidate();
-//        cityMap.repaint();
-        // option 3: revalidate/repaint mapPanel (nope)
-//        mapPanel.revalidate();
-//        mapPanel.repaint();
-        frame.pack();
+        cityMap.revalidate();
+//        frame.pack();
     }
 
     public void setLayoutDebugMode(boolean isDebugModeEnabled) {

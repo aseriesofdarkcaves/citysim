@@ -1,4 +1,4 @@
-package com.asodc.citysim.dunno;
+package com.asodc.citysim.old;
 
 class Business extends Tile {
     private BusinessType businessType;

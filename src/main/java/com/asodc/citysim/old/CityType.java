@@ -1,4 +1,4 @@
-package com.asodc.citysim.dunno;
+package com.asodc.citysim.old;
 
 enum CityType {
     CUSTOM,

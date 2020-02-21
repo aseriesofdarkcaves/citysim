@@ -1,4 +1,4 @@
-# com.asodc.citysim.dunno.CitySim
+# com.asodc.citysim.old.CitySim
 A light-hearted and not at all serious attempt at simulating a cityModel.
 
 By: aseriesofdarkcaves and gui
