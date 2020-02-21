@@ -75,9 +75,9 @@ public class CitySimView {
         inputPanel = new JPanel();
         inputPanelLabel = new JLabel("Input Panel");
         widthInputLabel = new JLabel("x:");
-        widthInputTextField = new JTextField("10");
+        widthInputTextField = new JTextField("25");
         heightInputLabel = new JLabel("y:");
-        heightInputTextField = new JTextField("10");
+        heightInputTextField = new JTextField("25");
         inputPanel.add(inputPanelLabel);
         inputPanel.add(widthInputLabel);
         inputPanel.add(widthInputTextField);
@@ -103,7 +103,7 @@ public class CitySimView {
         frame = new JFrame("CitySim");
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(500, 500));
+        frame.setPreferredSize(new Dimension(500, 400));
         frame.setContentPane(mainPanel);
         frame.pack();
         frame.setVisible(true);
