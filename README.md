@@ -6,8 +6,8 @@ By aseriesofdarkcaves and gui
 ## Implemented
 - Form-based GUI that contains:
    - a 2D map of generated city (initially blank)
-   - user input fields for the parameters used to generate a cityModel
-   - the ability to generate and regenerate a cityModel based on the user input fields
+   - user input fields for the parameters used to generate a city
+   - the ability to generate and regenerate a city based on the user input fields
    - read-only section to show the last generated parameters
 - The program should generate a plan/map of the city with various tile types
    - use strategy pattern to decouple generation algorithms from the city
