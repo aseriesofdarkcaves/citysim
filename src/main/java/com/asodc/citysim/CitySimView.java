@@ -3,7 +3,7 @@ package com.asodc.citysim;
 import javax.swing.*;
 import java.awt.*;
 
-public class CitySimView {
+class CitySimView {
     private CityMap cityMap;
     private final JFrame frame;
     private final JPanel mainPanel;
@@ -37,8 +37,7 @@ public class CitySimView {
      *         inputPanel
      *         buttonPanel
      */
-    public CitySimView() {
-
+    CitySimView() {
         // mainPanel will be used as the contentPane
         mainPanel = new JPanel(new FlowLayout());
 
@@ -109,11 +108,11 @@ public class CitySimView {
         frame.setVisible(true);
     }
 
-    public JButton getGenerateButton() {
+    JButton getGenerateButton() {
         return generateButton;
     }
 
-    public int getWidthInput() {
+    int getWidthInput() {
         try {
             return Integer.parseInt(widthInputTextField.getText());
         } catch (Exception e) {
@@ -121,7 +120,7 @@ public class CitySimView {
         }
     }
 
-    public int getHeightInput() {
+    int getHeightInput() {
         try {
             return Integer.parseInt(heightInputTextField.getText());
         } catch (Exception e) {
@@ -129,7 +128,7 @@ public class CitySimView {
         }
     }
 
-    public void update(CityModel cityModel) {
+    void update(CityModel cityModel) {
         widthInfoLabelValue.setText(Integer.toString(cityModel.getWidth()));
         heightInfoLabelValue.setText(Integer.toString(cityModel.getHeight()));
         // remove the old cityMap before creating a new one
@@ -140,7 +139,7 @@ public class CitySimView {
 //        frame.pack();
     }
 
-    public void setLayoutDebugMode(boolean isDebugModeEnabled) {
+    void setLayoutDebugMode(boolean isDebugModeEnabled) {
         if(isDebugModeEnabled) {
             frame.setBackground(Color.YELLOW);
             mainPanel.setBackground(Color.PINK);

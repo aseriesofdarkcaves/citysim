@@ -2,7 +2,7 @@ package com.asodc.citysim;
 
 import java.util.Random;
 
-public class Tile {
+class Tile {
     private final TileType type;
 
     Tile(TileType type) {

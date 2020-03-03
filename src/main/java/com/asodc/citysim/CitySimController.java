@@ -3,11 +3,11 @@ package com.asodc.citysim;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CitySimController {
+class CitySimController {
     private CityModel cityModel;
     private CitySimView view;
 
-    public CitySimController(CityModel cityModel, CitySimView view) {
+    CitySimController(CityModel cityModel, CitySimView view) {
         this.cityModel = cityModel;
         this.view = view;
         attachActionListeners();

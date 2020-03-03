@@ -1,13 +1,13 @@
 package com.asodc.citysim;
 
-public class RandomCity extends GenerationStrategy {
+class RandomCity extends GenerationStrategy {
 
     protected RandomCity(int width, int height) {
         super(width, height);
     }
 
     @Override
-    public Tile[][] getTiles() {
+    Tile[][] getTiles() {
         Tile[][] tiles = new Tile[this.getWidth()][this.getHeight()];
         for (int y = 0; y < tiles[0].length; y++) {
             for (int x = 0; x < tiles.length; x++) {

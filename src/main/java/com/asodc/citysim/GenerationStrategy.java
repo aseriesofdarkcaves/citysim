@@ -1,6 +1,6 @@
 package com.asodc.citysim;
 
-public abstract class GenerationStrategy {
+abstract class GenerationStrategy {
     private int width;
     private int height;
 
@@ -15,13 +15,13 @@ public abstract class GenerationStrategy {
         }
     }
 
-    public abstract Tile[][] getTiles();
+    abstract Tile[][] getTiles();
 
-    public int getWidth() {
+    int getWidth() {
         return width;
     }
 
-    public int getHeight() {
+    int getHeight() {
         return height;
     }
 }

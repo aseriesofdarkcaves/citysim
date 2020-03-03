@@ -3,7 +3,7 @@ package com.asodc.citysim;
 import javax.swing.*;
 import java.awt.*;
 
-public class CityMap extends JPanel {
+class CityMap extends JPanel {
     private int mapWidth;
     private int mapHeight;
     private CityModel cityModel;
@@ -22,9 +22,9 @@ public class CityMap extends JPanel {
     private boolean isModelInitialised = false;
     private final int TILE_PIXEL_SIZE = 12;
 
-    public CityMap() {}
+    CityMap() {}
 
-    public CityMap(CityModel cityModel) {
+    CityMap(CityModel cityModel) {
         this.mapWidth = cityModel.getWidth() * TILE_PIXEL_SIZE;
         this.mapHeight = cityModel.getHeight() * TILE_PIXEL_SIZE;
         this.cityModel = cityModel;
@@ -63,7 +63,7 @@ public class CityMap extends JPanel {
     }
 
     @Override
-    public void paintComponent(Graphics graphics) {
+    protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         if (isModelInitialised) {
             paintTiles(graphics);

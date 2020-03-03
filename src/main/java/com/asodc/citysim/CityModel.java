@@ -1,25 +1,25 @@
 package com.asodc.citysim;
 
-public class CityModel {
+class CityModel {
     private Tile[][] tiles;
     private GenerationStrategy strategy;
 
-    public CityModel() {}
+    CityModel() {}
 
-    public CityModel(GenerationStrategy strategy) {
+    CityModel(GenerationStrategy strategy) {
         this.strategy = strategy;
         this.tiles = strategy.getTiles();
     }
 
-    public Tile[][] getTiles() {
+    Tile[][] getTiles() {
         return tiles;
     }
 
-    public int getWidth() {
+    int getWidth() {
         return strategy.getWidth();
     }
 
-    public int getHeight() {
+    int getHeight() {
         return strategy.getHeight();
     }
 }
