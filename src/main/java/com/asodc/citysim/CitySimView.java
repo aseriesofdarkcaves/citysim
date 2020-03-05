@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 class CitySimView {
-    private CityMap cityMap;
+    private CityMapView cityMapView;
     private final JFrame frame;
     private final JPanel mainPanel;
     private final JPanel mapPanel;
@@ -46,9 +46,9 @@ class CitySimView {
         mapPanel.setLayout(new BoxLayout(mapPanel, BoxLayout.Y_AXIS));
         mapPanelLabel = new JLabel("Map Panel");
         mapPanel.add(mapPanelLabel);
-        cityMap = new CityMap();
-        cityMap.setName("cityMap");
-        mapPanel.add(cityMap);
+        cityMapView = new CityMapView();
+        cityMapView.setName("cityMap");
+        mapPanel.add(cityMapView);
 
         // controlPanel contains 3 sub-panels: infoPanel, inputPanel & buttonPanel
         controlPanel = new JPanel();
@@ -132,10 +132,10 @@ class CitySimView {
         widthInfoLabelValue.setText(Integer.toString(cityModel.getWidth()));
         heightInfoLabelValue.setText(Integer.toString(cityModel.getHeight()));
         // remove the old cityMap before creating a new one
-        mapPanel.remove(cityMap);
-        cityMap = new CityMap(cityModel);
-        mapPanel.add(cityMap);
-        cityMap.revalidate();
+        mapPanel.remove(cityMapView);
+        cityMapView = new CityMapView(cityModel);
+        mapPanel.add(cityMapView);
+        cityMapView.revalidate();
 //        frame.pack();
     }
 
@@ -144,7 +144,7 @@ class CitySimView {
             frame.setBackground(Color.YELLOW);
             mainPanel.setBackground(Color.PINK);
             mapPanel.setBackground(Color.MAGENTA);
-            cityMap.setBackground(Color.BLUE);
+            cityMapView.setBackground(Color.BLUE);
             controlPanel.setBackground(Color.CYAN);
             infoPanel.setBackground(Color.GREEN);
             inputPanel.setBackground(Color.ORANGE);
