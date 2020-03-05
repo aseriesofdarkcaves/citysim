@@ -1,16 +1,28 @@
 package com.asodc.citysim;
 
+import java.util.HashMap;
 import java.util.Random;
 
 class Tile {
     private final TileType type;
+    private static HashMap<TileType, Tile> instancedTiles = new HashMap<>();
 
-    Tile(TileType type) {
+    protected Tile(TileType type) {
         this.type = type;
     }
 
     TileType getTileType() {
         return type;
+    }
+
+    static Tile create(TileType type) {
+        if (instancedTiles.containsKey(type))
+            return instancedTiles.get(type);
+        else {
+            Tile tile = new Tile(type);
+            instancedTiles.put(type, tile);
+            return tile;
+        }
     }
 
     @Override

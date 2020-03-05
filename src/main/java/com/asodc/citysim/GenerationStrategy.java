@@ -1,8 +1,12 @@
 package com.asodc.citysim;
 
+import java.util.ArrayList;
+import java.util.List;
+
 abstract class GenerationStrategy {
     private int width;
     private int height;
+    protected List<Business> businesses = new ArrayList<>();
 
     private GenerationStrategy() {}
 

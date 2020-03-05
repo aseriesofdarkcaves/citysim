@@ -1,5 +1,7 @@
 package com.asodc.citysim;
 
+import java.util.List;
+
 class CityModel {
     private Tile[][] tiles;
     private GenerationStrategy strategy;
@@ -13,6 +15,11 @@ class CityModel {
 
     Tile[][] getTiles() {
         return tiles;
+    }
+
+    List<Business> getBusinesses() {
+        // TODO: determine if this is a good idea or not
+        return strategy.businesses;
     }
 
     int getWidth() {

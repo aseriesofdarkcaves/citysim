@@ -13,12 +13,9 @@ public class CitySim {
     }
 
     private static void startCitySim() {
-        // passive MVC model - controller updates both model and view
+        // passive MVC model - controller updates both model and view on clicking of generate button
         CityModel cityModel = new CityModel();
-
         CitySimView view = new CitySimView();
-//        view.setLayoutDebugMode(true);
-
         CitySimController controller = new CitySimController(cityModel, view);
     }
 }
