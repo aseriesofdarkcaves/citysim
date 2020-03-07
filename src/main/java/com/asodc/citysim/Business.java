@@ -3,6 +3,7 @@ package com.asodc.citysim;
 import java.util.Random;
 
 class Business extends Tile {
+    // TODO: think about if we need to store the tile location here or in the superclass
     private BusinessType businessType;
     private String name;
     private Integer ownerId;
