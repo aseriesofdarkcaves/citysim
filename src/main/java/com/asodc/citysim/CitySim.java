@@ -1,15 +1,11 @@
 package com.asodc.citysim;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 
 public class CitySim {
-    public static void main(String... args) {
-        // use event dispatch thread
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                startCitySim();
-            }
-        });
+    public static void main(String[] args) {
+        // Use event dispatch thread, via method reference
+        SwingUtilities.invokeLater(CitySim::startCitySim);
     }
 
     private static void startCitySim() {
@@ -19,6 +15,6 @@ public class CitySim {
         CitySimView view = new CitySimView();
 //        view.setLayoutDebugMode(true);
 
-        CitySimController controller = new CitySimController(cityModel, view);
+        new CitySimController(cityModel, view);
     }
 }

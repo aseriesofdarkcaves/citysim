@@ -1,6 +1,6 @@
 package com.asodc.citysim;
 
-class RandomCity extends GenerationStrategy {
+class RandomCity extends CityGenerationStrategy {
 
     protected RandomCity(int width, int height) {
         super(width, height);

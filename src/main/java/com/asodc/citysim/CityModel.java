@@ -2,11 +2,12 @@ package com.asodc.citysim;
 
 class CityModel {
     private Tile[][] tiles;
-    private GenerationStrategy strategy;
+    private CityGenerationStrategy strategy;
 
-    CityModel() {}
+    CityModel() {
+    }
 
-    CityModel(GenerationStrategy strategy) {
+    CityModel(CityGenerationStrategy strategy) {
         this.strategy = strategy;
         this.tiles = strategy.getTiles();
     }

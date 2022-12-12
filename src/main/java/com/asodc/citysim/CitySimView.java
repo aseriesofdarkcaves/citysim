@@ -1,7 +1,14 @@
 package com.asodc.citysim;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 class CitySimView {
     private CityMap cityMap;
@@ -27,15 +34,14 @@ class CitySimView {
     private final JButton generateButton;
 
     /**
-     * Heirarchy of containers inside JFrame
-     *
+     * Heirarchy of containers inside JFrame:
      * mainPanel :: FlowLayout
-     *     mapPanel :: BoxLayout
-     *         mapView
-     *     controlPanel :: BoxLayout
-     *         infoPanel
-     *         inputPanel
-     *         buttonPanel
+     * mapPanel :: BoxLayout
+     * mapView
+     * controlPanel :: BoxLayout
+     * infoPanel
+     * inputPanel
+     * buttonPanel
      */
     CitySimView() {
         // mainPanel will be used as the contentPane
@@ -140,7 +146,7 @@ class CitySimView {
     }
 
     void setLayoutDebugMode(boolean isDebugModeEnabled) {
-        if(isDebugModeEnabled) {
+        if (isDebugModeEnabled) {
             frame.setBackground(Color.YELLOW);
             mainPanel.setBackground(Color.PINK);
             mapPanel.setBackground(Color.MAGENTA);

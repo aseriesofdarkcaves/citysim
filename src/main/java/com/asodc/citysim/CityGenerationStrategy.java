@@ -1,12 +1,13 @@
 package com.asodc.citysim;
 
-abstract class GenerationStrategy {
+abstract class CityGenerationStrategy {
     private int width;
     private int height;
 
-    private GenerationStrategy() {}
+    private CityGenerationStrategy() {
+    }
 
-    protected GenerationStrategy(int width, int height) {
+    protected CityGenerationStrategy(int width, int height) {
         if (width > 0 && height > 0) {
             this.width = width;
             this.height = height;

@@ -1,7 +1,12 @@
 package com.asodc.citysim;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 
 class CityMap extends JPanel {
     private int mapWidth;
@@ -22,7 +27,8 @@ class CityMap extends JPanel {
     private boolean isModelInitialised = false;
     private final int TILE_PIXEL_SIZE = 12;
 
-    CityMap() {}
+    CityMap() {
+    }
 
     CityMap(CityModel cityModel) {
         this.mapWidth = cityModel.getWidth() * TILE_PIXEL_SIZE;
@@ -54,8 +60,8 @@ class CityMap extends JPanel {
         riverBank = riverBankIcon.getImage();
         ImageIcon roadIcon = new ImageIcon("src/main/resources/tiles/road.png");
         road = roadIcon.getImage();
-        ImageIcon sidewaklIcon = new ImageIcon("src/main/resources/tiles/sidewalk.png");
-        sidewalk = sidewaklIcon.getImage();
+        ImageIcon sidewalkIcon = new ImageIcon("src/main/resources/tiles/sidewalk.png");
+        sidewalk = sidewalkIcon.getImage();
         ImageIcon trainLineIcon = new ImageIcon("src/main/resources/tiles/trainLine.png");
         trainLine = trainLineIcon.getImage();
         ImageIcon tramLineIcon = new ImageIcon("src/main/resources/tiles/tramLine.png");
